@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Heart on GH Pages</title>
+    <!-- Linking PyScript assets -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <style>
+        body { background-color: #1a1a1a; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; color: white; font-family: sans-serif; flex-direction: column; }
+        #canvas-container { border: 2px solid #ff4d4d; border-radius: 10px; background: black; }
+    </style>
+</head>
+<body>
+
+    <h2>Python Heart Animation</h2>
+    <div id="canvas-container">
+        <!-- This is where the Python turtle will draw -->
+        <div id="turtle-canvas"></div>
+    </div>
+
+    <script type="py">
+        import turtle
+
+        # Setup the screen within the PyScript environment
+        screen = turtle.Screen()
+        t = turtle.Turtle()
+        t.speed(3)
+        t.color("red")
+        t.begin_fill()
+        t.fillcolor("red")
+
+        # The Heart Logic
+        t.left(140)
+        t.forward(180)
+        t.circle(-90, 200)
+        
+        # Left "hump"
+        t.setheading(60)
+        t.circle(-90, 200)
+        
+        t.forward(180)
+        t.end_fill()
+        t.hideturtle()
+
+        print("Calculation complete. Heart rendered!")
+    </script>
+
+</body>
+</html>
